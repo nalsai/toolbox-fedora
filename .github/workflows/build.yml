@@ -23,7 +23,7 @@ jobs:
         id: build-image
         with:
           image: ${{ env.IMAGE_NAME }}
-          tags: ${{ env.FEDORA_VERSION }} ${{ github.sha }}
+          tags: latest ${{ env.FEDORA_VERSION }} ${{ github.sha }}
           containerfiles: |
             ./Containerfile
           build-args: |
