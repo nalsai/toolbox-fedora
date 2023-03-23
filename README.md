@@ -1,11 +1,10 @@
 # My Fedora Toolbox
 
-My personal toolbox for Fedora Silverblue.
+My personal toolbox/distrobox image.
 
-```sh
-toolbox create -i ghcr.io/nalsai/toolbox-fedora:37
+```fish
+distrobox rm my-distrobox --force
+distrobox create -Y -n my-distrobox -i ghcr.io/nalsai/toolbox-fedora:latest --init-hooks "bash /home/nalsai/.dotfiles/linux/scripts/distrobox-fedora.sh"
 ```
 
-```sh
-distrobox create -i ghcr.io/nalsai/toolbox-fedora:37
-```
+The init-hooks script is in my dotfiles: <https://github.com/Nalsai/dotfiles/>
