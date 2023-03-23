@@ -8,13 +8,15 @@ on:
     - cron: "20 16 */3 * *"
 
 env:
-  REGISTRY: ghcr.io/nalsai
+  REGISTRY: ghcr.io/${{ github.repository_owner }}
   IMAGE_NAME: toolbox-fedora
   FEDORA_VERSION: 37
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
     steps:
       - uses: actions/checkout@v3
       - uses: redhat-actions/buildah-build@v2
