@@ -8,7 +8,7 @@ RUN echo "Installing RPM Fusion..." \
     && dnf -y groupupdate core
 
 RUN echo "Installing packages..." \
-    && dnf -y install bat cargo curl exa fastfetch ffmpeg fish flatpak-builder git gnome-tweaks htop hugo \
+    && dnf -y install bat cargo curl dotnet-sdk-7.0 exa fastfetch ffmpeg fish flatpak-builder git gnome-tweaks htop hugo \
     librsvg2-tools neovim ocrmypdf pandoc perl-Image-ExifTool poppler-utils ripgrep rust \
     tesseract-langpack-deu tesseract-langpack-eng tesseract-osd \
     unrar unzip which yt-dlp
