@@ -10,8 +10,11 @@ RUN echo "Installing RPM Fusion..." \
 RUN echo "Installing packages..." \
     && dnf -y install bat cargo curl dotnet-sdk-7.0 exa fastfetch ffmpeg fish flatpak-builder git gnome-tweaks htop hugo \
     librsvg2-tools neovim ocrmypdf pandoc perl-Image-ExifTool poppler-utils ripgrep rust \
-    tesseract-langpack-deu tesseract-langpack-eng tesseract-osd \
+    tesseract-langpack-deu tesseract-langpack-eng tesseract-langpack-jpn tesseract-osd \
     unrar unzip which yt-dlp
+
+RUN echo "Installing packages for resolve..." \
+    && dnf -y install mesa-libGLU xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm libxcrypt-compat rocm-opencl
 
 RUN echo "Installing host-spawn..." \
     && host_spawn_version="1.4.1" \
