@@ -42,18 +42,14 @@ RUN echo "Installing PowerShell..." \
     && curl https://packages.microsoft.com/config/rhel/8/prod.repo | tee /etc/yum.repos.d/microsoft.repo \
     && dnf -y install powershell
 
-RUN curl -Ss https://raw.githubusercontent.com/Nalsai/dotfiles/main/linux/scripts/install_gotop.sh | bash
+RUN curl -Ss https://raw.githubusercontent.com/nalsai/dotfiles/main/linux/scripts/install_gotop.sh | bash
 
 RUN echo "Installing imgname..." \
     && mkdir -p /tmp/imgname \
-    && CARGO_TARGET_DIR=/tmp/imgname cargo install --git https://github.com/Nalsai/imgname \
+    && CARGO_TARGET_DIR=/tmp/imgname cargo install --git https://github.com/nalsai/imgname \
     && mkdir -p /usr/share/bash-completion/completions \
     && mkdir -p /usr/share/fish/completions \
     && mkdir -p /usr/share/zsh/site-functions \
     && install -m644 /tmp/imgname/release/build/imgname-*/out/imgname.bash /usr/share/bash-completion/completions/imgname \
     && install -m644 /tmp/imgname/release/build/imgname-*/out/imgname.fish /usr/share/fish/completions/imgname.fish \
     && install -m644 /tmp/imgname/release/build/imgname-*/out/_imgname /usr/share/zsh/site-functions/_imgname
-
-#RUN echo "Installing unzrip..." \
-#    && dnf -y install libzstd-devel \
-#    && cargo install --git https://github.com/quininer/unzrip
