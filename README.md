@@ -3,7 +3,7 @@
 My personal toolbox/distrobox image.
 
 ```sh
-distrobox create -Y -n my-distrobox -i ghcr.io/nalsai/toolbox-fedora:latest --init-hooks "bash /home/nalsai/.dotfiles/linux/scripts/distrobox-fedora.sh"
+distrobox create -Y -n my-distrobox -i ghcr.io/nalsai/toolbox-fedora:latest --init-hooks "bash $HOME/.dotfiles/linux/scripts/distrobox-fedora.sh"
 ```
 
 ```sh
