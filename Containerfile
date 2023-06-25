@@ -53,3 +53,6 @@ RUN echo "Installing imgname..." \
     && install -m644 /tmp/imgname/release/build/imgname-*/out/imgname.bash /usr/share/bash-completion/completions/imgname \
     && install -m644 /tmp/imgname/release/build/imgname-*/out/imgname.fish /usr/share/fish/completions/imgname.fish \
     && install -m644 /tmp/imgname/release/build/imgname-*/out/_imgname /usr/share/zsh/site-functions/_imgname
+
+RUN echo "Installing ripgrep-all..." \
+    && cargo install --git https://github.com/phiresky/ripgrep-all --tag v1.0.0-alpha.5
