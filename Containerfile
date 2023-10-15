@@ -3,6 +3,11 @@ ARG FROM=registry.fedoraproject.org/fedora-toolbox:${FEDORA_VERSION}
 
 FROM ${FROM}
 
+# xdg-open wrapper allows seamlessly opening links in the host browser
+RUN echo "Adding xdg-open wrapper ..." \
+    && echo -e "if [[ -f \"/run/.containerenv\" ]]; then\n\tflatpak-spawn --host /usr/bin/xdg-open \"\$@\"\nelse\n\t/usr/bin/xdg-open \"\$@\"\nfi" | tee /usr/local/bin/xdg-open \
+    && chmod +x /usr/local/bin/xdg-open
+
 RUN echo "Installing RPM Fusion..." \
     && dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm \
     && dnf -y groupupdate core
@@ -22,10 +27,6 @@ RUN echo "Installing VSCode..." \
     && rpm --import https://packages.microsoft.com/keys/microsoft.asc \
     && sh -c "echo -e '[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc' > /etc/yum.repos.d/vscode.repo" \
     && dnf -y install code
-
-#RUN echo "Adding xdg-open wrapper ..." \
-#    && echo -e "if [[ -f \"/run/.containerenv\" ]]; then\n\tflatpak-spawn --host /usr/bin/xdg-open \"\$@\"\nelse\n\t/usr/bin/xdg-open \"\$@\"\nfi" | tee /usr/local/bin/xdg-open \
-#    && chmod +x /usr/local/bin/xdg-open
 
 #RUN echo "Installing PowerShell..." \
 #    && curl https://packages.microsoft.com/config/rhel/9/prod.repo | tee /etc/yum.repos.d/microsoft.repo \
