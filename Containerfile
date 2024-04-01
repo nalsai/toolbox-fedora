@@ -16,7 +16,7 @@ RUN echo "Installing packages..." \
     && dnf -y install bat cargo curl dotnet-sdk-7.0 eza fastfetch ffmpeg fish flatpak-builder git gnome-tweaks htop hugo \
     librsvg2-tools neovim optipng ocrmypdf pandoc perl-Image-ExifTool poppler-utils ripgrep rust rustfmt rust-analyzer \
     tesseract-langpack-deu tesseract-langpack-eng tesseract-langpack-jpn tesseract-osd \
-    unrar unzip which yt-dlp zopfli
+    unrar unzip which yt-dlp zopfli flac
 
 RUN echo "Installing packages for resolve..." \
     && dnf -y install alsa-lib apr apr-util fontconfig freetype libglvnd-egl librsvg2 libXcursor libXi libXinerama libxkbcommon-x11 libXrandr libXrender libXtst mtdev pulseaudio-libs \
