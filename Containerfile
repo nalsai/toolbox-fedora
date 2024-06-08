@@ -1,4 +1,4 @@
-ARG FEDORA_VERSION=39
+ARG FEDORA_VERSION=40
 ARG FROM=registry.fedoraproject.org/fedora-toolbox:${FEDORA_VERSION}
 
 FROM ${FROM}
