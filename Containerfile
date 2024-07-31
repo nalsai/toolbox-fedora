@@ -12,11 +12,11 @@ RUN echo "Installing RPM Fusion..." \
     && dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm \
     && dnf -y groupupdate core
 
-RUN echo "Installing packages..." \
-    && dnf -y install bat cargo curl dotnet-sdk-8.0 eza fastfetch ffmpeg fish flatpak-builder git ghostscript gnome-tweaks htop hugo \
-    librsvg2-tools neovim optipng ocrmypdf pandoc perl-Image-ExifTool pngquant poppler-utils ripgrep rust rustfmt rust-analyzer \
-    tesseract-langpack-deu tesseract-langpack-eng tesseract-langpack-jpn tesseract-langpack-jpn_vert tesseract-osd \
-    unpaper unrar unzip which yt-dlp zopfli flac
+RUN echo "Installing packages..."
+RUN dnf -y install bat cargo curl dotnet-sdk-8.0 eza fastfetch ffmpeg fish flatpak-builder git ghostscript gnome-tweaks htop hugo
+RUN dnf -y install librsvg2-tools neovim optipng ocrmypdf pandoc perl-Image-ExifTool pngquant poppler-utils ripgrep rust rustfmt rust-analyzer
+RUN dnf -y install tesseract-langpack-deu tesseract-langpack-eng tesseract-langpack-jpn tesseract-langpack-jpn_vert tesseract-osd
+RUN dnf -y install unpaper unrar unzip which yt-dlp zopfli flac oxipng parallel
 
 # TODO: replace ocrmypdf with pip version
 
