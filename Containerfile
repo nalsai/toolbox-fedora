@@ -9,8 +9,7 @@ RUN echo "Adding xdg-open wrapper ..." \
     && chmod +x /usr/local/bin/xdg-open
 
 RUN echo "Installing RPM Fusion..." \
-    && dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm \
-    && dnf -y groupupdate core
+    && dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 RUN echo "Installing packages..."
 RUN dnf -y install bat cargo curl dotnet-sdk-8.0 eza fastfetch ffmpeg fish flatpak-builder git ghostscript gnome-tweaks htop hugo
