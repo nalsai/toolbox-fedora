@@ -15,7 +15,7 @@ RUN echo "Installing packages..."
 RUN dnf -y install bat cargo curl fastfetch ffmpeg fish git ghostscript gnome-tweaks htop hugo
 RUN dnf -y install librsvg2-tools neovim ocrmypdf pandoc perl-Image-ExifTool poppler-utils ripgrep rust rustfmt rust-analyzer
 RUN dnf -y install tesseract-langpack-deu tesseract-langpack-eng tesseract-langpack-jpn tesseract-langpack-jpn_vert tesseract-osd
-RUN dnf -y install unpaper unrar unzip which yt-dlp zopfli flac oxipng parallel jpegoptim
+RUN dnf -y install unpaper unrar unzip which yt-dlp zopfli flac oxipng parallel jpegoptim ImageMagick
 
 RUN echo "Installing packages for resolve..." \
     && dnf -y install alsa-lib apr apr-util fontconfig freetype libglvnd-egl librsvg2 libXcursor libXi libXinerama libxkbcommon-x11 libXrandr libXrender libXtst mtdev pulseaudio-libs \
