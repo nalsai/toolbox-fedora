@@ -15,7 +15,7 @@ RUN echo "Installing packages..."
 RUN dnf -y install bat cargo curl dotnet-sdk-8.0 eza fastfetch ffmpeg fish flatpak-builder git ghostscript gnome-tweaks htop hugo
 RUN dnf -y install librsvg2-tools neovim optipng ocrmypdf pandoc perl-Image-ExifTool pngquant poppler-utils python3-pip ripgrep rust rustfmt rust-analyzer
 RUN dnf -y install tesseract-langpack-deu tesseract-langpack-eng tesseract-langpack-jpn tesseract-langpack-jpn_vert tesseract-osd
-RUN dnf -y install unpaper unrar unzip which yt-dlp zopfli flac oxipng parallel
+RUN dnf -y install unpaper unrar unzip which yt-dlp zopfli flac oxipng parallel jpegoptim
 
 # TODO: replace ocrmypdf with pip version
 
