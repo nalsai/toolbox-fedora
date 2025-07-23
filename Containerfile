@@ -19,7 +19,7 @@ RUN dnf -y install unpaper unrar unzip which yt-dlp zopfli flac oxipng parallel 
 
 RUN echo "Installing packages for resolve..." \
     && dnf -y install alsa-lib apr apr-util fontconfig freetype libglvnd-egl librsvg2 libXcursor libXi libXinerama libxkbcommon-x11 libXrandr libXrender libXtst mtdev pulseaudio-libs \
-                      mesa-libGLU xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm \
+                      mesa-libGLU xcb-util-cursor xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm \
     && dnf -y install alsa-plugins-pulseaudio libxcrypt-compat rocm-opencl
 
 RUN echo "Installing VSCode..." \
