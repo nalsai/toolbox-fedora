@@ -3,6 +3,7 @@
 My personal toolbox/distrobox image.
 
 ```sh
+podman pull ghcr.io/nalsai/toolbox-fedora:latest
 distrobox rm my-distrobox -f
 distrobox create -Y -n my-distrobox -i ghcr.io/nalsai/toolbox-fedora:latest
 
