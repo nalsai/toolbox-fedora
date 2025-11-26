@@ -12,7 +12,7 @@ RUN echo "Installing RPM Fusion..." \
     && dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 RUN echo "Installing packages..."
-RUN dnf -y install bat cargo curl fastfetch ffmpeg fish git ghostscript gnome-tweaks htop hugo
+RUN dnf -y install cargo curl fastfetch ffmpeg fish git ghostscript gnome-tweaks htop hugo
 RUN dnf -y install librsvg2-tools neovim ocrmypdf pandoc perl-Image-ExifTool poppler-utils ripgrep rust rustfmt rust-analyzer
 RUN dnf -y install tesseract-langpack-deu tesseract-langpack-eng tesseract-langpack-jpn tesseract-langpack-jpn_vert tesseract-osd
 RUN dnf -y install unpaper unrar unzip which yt-dlp zopfli flac oxipng parallel jpegoptim ImageMagick
@@ -31,8 +31,8 @@ RUN echo "Installing VSCode..." \
 #    && curl https://packages.microsoft.com/config/rhel/9/prod.repo | tee /etc/yum.repos.d/microsoft.repo \
 #    && dnf -y install powershell
 
-RUN echo "Installing gotop..." \
-    && curl -Ss https://raw.githubusercontent.com/nalsai/dotfiles/main/linux/scripts/install_gotop.sh | bash
+#RUN echo "Installing gotop..." \
+#    && curl -Ss https://raw.githubusercontent.com/nalsai/dotfiles/main/linux/scripts/install_gotop.sh | bash
 
 RUN echo "Compiling and installing jbig2enc..." \
     && dnf -y install automake libtool leptonica-devel zlib-devel gcc-c++ \
