@@ -17,10 +17,10 @@ RUN dnf -y install librsvg2-tools neovim ocrmypdf pandoc perl-Image-ExifTool pop
 RUN dnf -y install tesseract-langpack-deu tesseract-langpack-eng tesseract-langpack-jpn tesseract-langpack-jpn_vert tesseract-osd
 RUN dnf -y install unpaper unrar unzip which yt-dlp zopfli flac oxipng parallel jpegoptim ImageMagick
 
-RUN echo "Installing packages for resolve..." \
-    && dnf -y install alsa-lib apr apr-util fontconfig freetype libglvnd-egl librsvg2 libXcursor libXi libXinerama libxkbcommon-x11 libXrandr libXrender libXtst mtdev pulseaudio-libs \
-                      mesa-libGLU xcb-util-cursor xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm \
-    && dnf -y install alsa-plugins-pulseaudio libxcrypt-compat rocm-opencl
+#RUN echo "Installing packages for resolve..." \
+#    && dnf -y install alsa-lib apr apr-util fontconfig freetype libglvnd-egl librsvg2 libXcursor libXi libXinerama libxkbcommon-x11 libXrandr libXrender libXtst mtdev pulseaudio-libs \
+#                      mesa-libGLU xcb-util-cursor xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm \
+#    && dnf -y install alsa-plugins-pulseaudio libxcrypt-compat rocm-opencl
 
 RUN echo "Installing VSCode..." \
     && rpm --import https://packages.microsoft.com/keys/microsoft.asc \
